@@ -35,20 +35,4 @@ public class Student {
         Email = email;
         Address = address;
     }
-
-/* public void setFirstName(String firstName) {
-        FirstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        LastName = lastName;
-    }
-
-    public void setEmail(String email) {
-        Email = email;
-    }
-
-    public void setAddress(String address) {
-        Address = address;
-    }*/
 }
