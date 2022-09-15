@@ -1,6 +1,6 @@
 body {
 
-    background-color: rgb(103, 87, 107);
+  background-color: rgb(82, 3, 36);
 }
 
 
@@ -114,7 +114,7 @@ body {
 
 .header {
     font-family:sans-serif;
-    padding: 30px;
+    padding: 30px; 
     text-align: center;
     background: #092b24;
     color: white;
@@ -180,10 +180,20 @@ body {
     border-radius: 4px;
     box-sizing: border-box;
   }
-  
-  input[type=submit] {
+
+  input[type=email], select {
     width: 100%;
-    background-color: #4CAF50;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .SubmitButton {
+    width: 100%;
+    background-color: #010c02;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -196,12 +206,58 @@ body {
     background-color: #45a049;
   }
   
-  #TheDiv {
-    border-radius: 5px;
-    background-color: #f2f2f2;
+  #div1 {
+    border-radius: 25px;
+    background-color: #FF013C;
     padding: 20px;
+    margin-top: 20px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 50px;
   }
 
+  legend{
+    font-size:2em;
+    font-family:'Bebas Neue', sans-serif ;
+    border-style: none;
+    color: white;
+  }
+
+  label{
+    font-size:1.2em;
+    font-family:'Bebas Neue', sans-serif ;
+    border-style: none;
+    color: rgb(255, 255, 255) ;
+  }
+
+  fieldset{
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    width: 50%;
+    text-align: center;
+    margin-left: 300px;
+  }
+
+  #fieldset1{
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    width: 50%;
+    text-align: center;
+    margin-left: 250px;
+  }
+
+  .form {
+    display: inline-block;
+}
+
+.form1 {
+  display: inline-block;
+}
+    
 
 
 /*This is the table CSS*/

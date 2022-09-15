@@ -5,7 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="StudentStyles.css">
-   
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="jquery.restfulizer.js"></script>
+
+    <script type="text/javascript">
+			$(document).ready(function() {
+				
+				
+				$(".example3").restfulizer({
+					parse: true,
+					method: "DELETE"
+				});
+				
+				
+			
+			});
+		</script>
     
     <title>AdminConsole</title>
 </head>
@@ -17,48 +32,48 @@
       </div>
 
 
- 
+
+      <!--<a href="/Students/remove/15" data-method="DELETE" class="rest">link</a>
+      <a href="/Students/remove/15" class="example3" data-method="DELETE">Simple DELETE</a>-->
+
+
 
   <div id="div1">
-  <form class="form">
-    <fieldset>
-        <legend>Student</legend>
-        <label for="first_name">Name:</label>
-        <input type="text" id="first_name" name="first_name" placeholder="Your first name...">
-        <br>
-        <label for="last_name">Lastname:</label>
-        <input type="text" id="last_name" name="last_name" placeholder="Your last name...">
-        <br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Your email...">
-        <br>
-        <br>
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" placeholder="Your address...">
-        <button type="submit">New Student</button>
+  <form class="form1">
+    <fieldset id="fieldset1">
+        <legend>Remove Student</legend>
+        <label for="StudentId">Student ID:</label>
+        <input type="text" id="StudentID" name="Id" placeholder="Student Id...">
+       
+        <button class="SubmitButton" onclick="deleteStudent()" type="submit">Remove Student</button>
     </fieldset>
   </form>
   </div>
 
   <script>
-      
-    const formEl = document.querySelector('.form');
+  const formEl1 = document.querySelectorAll('.form1');
 
-    formEl.addEventListener('submit', event => {
-       event.preventDefault();
-
-       const formData = new FormData(formEl);
+  function deleteStudent(){
+        const formData = new FormData(formEl1);
        const data = Object.fromEntries(formData);
+   
+    fetch('http://localhost:8080/Students/remove/' + data, {
+      method: 'DELETE',
+    })
+    .then(res => res.text()) // or res.json()
+    .then(res => console.log(res))
+  }
+    </script>
 
-       fetch('http://localhost:8080/Students/add', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-       });
-    });
-</script>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -73,6 +88,25 @@
   </body>
   </html>
 
+
+  <script>
+  const formEl = document.querySelector('.form1');
+
+    formEl.addEventListener('submit', event => {
+       event.preventDefault();
+
+       const formData = new FormData(formEl);
+       const data = Object.fromEntries(formData);
+
+       fetch('/Students/remove/', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+       });
+    });
+</script>
 
     <!-- 
     <p>
